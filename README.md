@@ -19,8 +19,8 @@ Tracks stock prices, commodities, forex rates, inflation rates.  Your job is to 
 
 - [x]  Transform data.
 
-- [ ]  Use the built in logging module.
+- [x]  Use the built in logging module.
 
-- [ ]  Save the transformed data in a ready-to-load format which data engineers can use to load the data.
+- [x]  Save the transformed data in a ready-to-load format which data engineers can use to load the data.
 
 
