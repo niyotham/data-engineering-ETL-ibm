@@ -26,6 +26,6 @@ Tracks stock prices, commodities, forex rates, inflation rates.  Your job is to 
 # Apply transformation and use airlfow for task scheduling
 Extract transform and load and transform tasks flow in airflow GUI
 
-![tasks0()
+[tasks0(https://github.com/niyotham/data-engineering-ETL-ibm/blob/main/Course%2008%20-%20ETL%20and%20Data%20Pipelines%20with%20Shell%2C%20Airflow%20and%20Kafka/images/Untitled.png)
 
 
