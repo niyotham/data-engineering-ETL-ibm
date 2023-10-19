@@ -23,4 +23,9 @@ Tracks stock prices, commodities, forex rates, inflation rates.  Your job is to 
 
 - [x]  Save the transformed data in a ready-to-load format which data engineers can use to load the data.
 
+# Apply transformation and use airlfow for task scheduling
+Extract transform and load and transform tasks flow in airflow GUI
+
+![tasks0()
+
 
