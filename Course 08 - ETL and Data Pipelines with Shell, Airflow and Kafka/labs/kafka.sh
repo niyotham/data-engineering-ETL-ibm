@@ -28,7 +28,39 @@ bin/kafka-console-consumer.sh --topic news --from-beginning --bootstrap-server l
 # Run the following command to create a new consumer within a consumer group called atm-app:
 
 
-
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic bankbranch --group atm-app
 
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic bankbranch --group atm-app
+
+# Reset offset
+# We can reset the index with the --reset-offsets argument.
+
+# First let’s try resetting the offset to the earliest position (beginning) using --reset-offsets --to-earliest.
+
+# Stop the previous consumer if it is still running, and run the following command to reset the offset:
+
+bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092  --topic bankbranch --group atm-app --reset-offsets --to-earliest --execute
+
+# Now the offsets have been set to 0 (the beginning).
+
+# Start the consumer again:
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic bankbranch --group atm-app
+
+# You should see that all 12 messages are consumed and that all offsets have reached the partition ends again.
+
+# In fact, you can reset the offset to any position. For example, let’s reset the offset so that
+# we only consume the last two messages.
+
+# Stop the previous consumer
+
+# Shift the offset to left by 2 using --reset-offsets --shift-by -2:
+
+
+bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092  --topic bankbranch --group atm-app --reset-offsets --shift-by -2 --execute
+Copied!
+# If you run the consumer again, you should see that we consumed 4 messages, 2 for each partition:
+
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic bankbranch --group atm-app
+
+
+
